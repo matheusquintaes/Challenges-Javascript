@@ -24,7 +24,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "O time que está em [POSIÇÃO]º lugar é o [NOME DO TIME].";
     - Onde [POSIÇÃO] é o valor passado por parâmetro e [NOME DO TIME] é o time
     que está nessa posição no array criado acima com os nomes dos times.
-    --------------
+    -------------- com
     Dica: lembre-se que arrays começam no índice zero, então a posição passada
     deve ser sempre um número a mais que o índice do array ;)
     --------------
