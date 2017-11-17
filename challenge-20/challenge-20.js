@@ -1,3 +1,6 @@
+(function(window, document){
+'use strict'
+
 /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
@@ -14,43 +17,66 @@ resultado à uma variável chamada `username`. Se o usuário não digitar um
 nome, `username` deve receber "Desconhecido".
 Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
 */
-// ?
+
+var username = prompt('Qual o seu nome?') || 'Desconhecido'
+
+alert( 'Bem vindo ' + username);
 
 /*
 Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
 uma variável chamada `email`.
 */
-// ?
+var email = prompt('Qual o seu email?')
 
 /*
 - Selecione o input de "Nome", atribuindo-o à uma variável chamada
 `$inputUsername`.
 */
-// ?
+var $inputUsername = document.querySelector('input[type=text]');
 
 /*
 - Selecione o input de "Email", atribuindo-o à uma variável chamada
 `$inputEmail`.
 */
-// ?
+var $inputEmail = document.querySelector('input[type=email]');
+
 
 /*
 - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
 `$message`.
 */
-// ?
+var $message = document.querySelector('textarea');
 
 /*
 - Selecione o botão de envio do formulário, atribuindo-o à uma variável
 chamada `$button`.
 */
-// ?
+var $button = document.querySelector('button');
+
 
 /*
 Preencha os campos de "Nome" e "Email" que estão no documento com os valores
 entrados pelo usuário.
 */
-// ?
+$inputUsername.value = username;
+$inputEmail.value = email;
+
+$button.addEventListener( 'click', function( event ){
+    event.preventDefault();
+
+    if( !$inputUsername.value )
+        return alert( 'Preencha o nome do Usuário' );
+    if( !$inputEmail.value )
+        return alert( 'Preencha o e-mail' );
+    if( !$message.value )
+        return alert( 'Preencha a mensagem!' );
+    if( !isValidEmail( $inputEmail.value ) )
+        return alert( 'Entre com um e-mail válido!' );
+    if( !confirm( 'Tem Certeza que deseja enviar o formulário?' ) )
+        return alert( 'Não enviado' );
+    return alert( 'Mensagem enviada com sucesso' );
+})
+
 
 /*
 Adicione um listener de evento de click ao botão que faça o seguinte:
@@ -93,6 +119,8 @@ As regras para validação são:
     - O final do domínio é opcional, mas se existir, deve começar com um
     ponto, seguido de no máximo 2 caracteres alfanuméricos.
 
+ 
+
 Alguns e-mails válidos que podem ser usados para testar:
     - "meu.email+categoria@gmail.com"
     - "juca_malandro@bol.com.br"
@@ -105,3 +133,10 @@ Alguns e-mails inválidos:
     - "agua_@evida.br.com"
 */
 // ?
+function isValidEmail(email){
+    console.log(email);
+    var regex = new RegExp('[\\w\\+\\.]+@\\w+\\.\\w{2,}.?(?:\\w{2})?$','g');
+    return regex.test(email);
+}
+
+})(window, document);
