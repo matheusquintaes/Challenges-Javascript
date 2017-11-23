@@ -41,6 +41,7 @@
   Array.prototype.forEach.call( $buttonsOperations, function( button ){
     button.addEventListener('click', handleClickOperation)
   });
+
   $buttomEqual.addEventListener('click', handleClickEqual);
   $buttomCE.addEventListener('click', handleClickCE);
 
