@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body data-js="body">
+
+    <h1 data-js="company-name"></h1>
+    <h2 data-js="company-phone"></h2>
+    <form data-js="formRegister">
+      <div>
+        <label for="">Imagem do carro </label>
+        <input type="text" data-js="image">
+      </div>
+      <div>
+        <label for="">Marca / Modelo </label>
+        <input type="text" data-js="brand">
+      </div>
+      <div>
+        <label for="">Ano</label>
+        <input type="text" data-js="year">
+      </div>
+      <div>
+        <label for="">Placa</label>
+        <input type="text" data-js="plate">
+      </div>
+      <div>
+        <label for="">Cor</label>
+        <input type="text" data-js="color">
+      </div>
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+            <th>Imagem</th>
+            <th>Marca/Modelo</th>
+            <th>Ano</th>
+            <th>Placa</th>
+            <th>Cor</th>
+        </tr>
+      </thead>
+      <tbody data-js="tableCars">
+
+      </tbody>
+    </table>
+    <script src="dom.js"></script>
+    <script src="challenge-29.js"></script>
+  </body>
+</html>
